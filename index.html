@@ -3,34 +3,38 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/Calc Project/styles.css">
+    <title>Earthy Calculator</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    
     <div id="calc">
-        <input id="display" readonly>
+        <input id="display" readonly placeholder="0">
         <div id="keys">
-            <button onclick="appendToDisplay('+')" class="operator">+</button>
-            <button onclick="appendToDisplay('7')">7</button>
-            <button onclick="appendToDisplay('8')">8</button>
-            <button onclick="appendToDisplay('8')">9</button>
-            <button onclick="appendToDisplay('-')" class="operator">-</button>
-            <button onclick="appendToDisplay('4')">4</button>
-            <button onclick="appendToDisplay('5')">5</button>
-            <button onclick="appendToDisplay('6')">6</button>
-            <button onclick="appendToDisplay('*')" class="operator">*</button>
-            <button onclick="appendToDisplay('1')">1</button>
-            <button onclick="appendToDisplay('2')">2</button>
-            <button onclick="appendToDisplay('3')">3</button>
-            <button onclick="appendToDisplay('/')" class="operator">/</button>
-            <button onclick="appendToDisplay('0')">0</button>
-            <button onclick="appendToDisplay('.')">.</button>
-            <button onclick="calculate()">=</button>
-            <button onclick="clearDisplay()" class="operator">C</button>
+            <button class="clear" onclick="clearDisplay()">C</button>
+            <button class="operator" onclick="appendToDisplay('/')" data-sound="operator">÷</button>
+            <button class="operator" onclick="appendToDisplay('*')" data-sound="operator">×</button>
+            <button class="operator" onclick="deleteLast()" data-sound="delete">⌫</button>
+            
+            <button onclick="appendToDisplay('7')" data-sound="number">7</button>
+            <button onclick="appendToDisplay('8')" data-sound="number">8</button>
+            <button onclick="appendToDisplay('9')" data-sound="number">9</button>
+            <button class="operator" onclick="appendToDisplay('-')" data-sound="operator">−</button>
+            
+            <button onclick="appendToDisplay('4')" data-sound="number">4</button>
+            <button onclick="appendToDisplay('5')" data-sound="number">5</button>
+            <button onclick="appendToDisplay('6')" data-sound="number">6</button>
+            <button class="operator" onclick="appendToDisplay('+')" data-sound="operator">+</button>
+            
+            <button onclick="appendToDisplay('1')" data-sound="number">1</button>
+            <button onclick="appendToDisplay('2')" data-sound="number">2</button>
+            <button onclick="appendToDisplay('3')" data-sound="number">3</button>
+            <button class="equals" onclick="calculate()" data-sound="equals">=</button>
+            
+            <button class="zero" onclick="appendToDisplay('0')" data-sound="number">0</button>
+            <button onclick="appendToDisplay('.')" data-sound="number">.</button>
         </div>
     </div>
-
-    <script src="/Calc Project/index.js"></script>
+    
+    <script src="script.js"></script>
 </body>
 </html>
